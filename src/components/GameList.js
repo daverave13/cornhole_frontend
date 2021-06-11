@@ -7,7 +7,7 @@ const GameList = (props) => {
     const [ games, setGames ] = useState([]);
 
     const getGames = () => {
-        fetch("http://dslusser.com:5000/api/games/", { method: "GET" })
+        fetch("http://localhost:5000/api/games/", { method: "GET" })
             .then((response) => response.json())
             .then((data) => {setGames(data)});
     };
@@ -25,7 +25,7 @@ const GameList = (props) => {
             method: "DELETE",
         };
 
-        fetch("http://dslusser.com:5000/api/games/" + id, requestOptions).then(
+        fetch("http://localhost:5000/api/games/" + id, requestOptions).then(
             (response) => response.text()
         );
         getGames();

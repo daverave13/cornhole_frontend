@@ -2,6 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://dslusser.com/cornhole",
   "dependencies": {
     "@testing-library/jest-dom": "^5.13.0",
     "@testing-library/react": "^11.2.7",
@@ -9,6 +10,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "serve": "^12.0.0",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -46,6 +48,5 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/daverave13/cornhole_frontend/issues"
-  },
-  "homepage": "https://github.com/daverave13/cornhole_frontend#readme"
+  }
 }
