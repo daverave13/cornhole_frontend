@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+
+.Header div {
+    font-family: 'Italianno', cursive;
+    color: rgb(255, 255, 255);
+    font-size: 12rem;
+    margin-bottom: -80px;
+    background-color: black;
+}

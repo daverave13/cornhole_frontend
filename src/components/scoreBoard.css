@@ -1,0 +1,76 @@
+body {
+    background: url("https://previews.123rf.com/images/kanate/kanate1106/kanate110600297/9647937-football-grass-field.jpg");
+}
+
+.score-board {
+    width: 70vw;
+    margin: 20px auto;
+    background: radial-gradient(circle, rgb(97, 101, 110) 70%, rgb(104, 104, 104));
+    border-radius: 20px;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    box-shadow: 0 0 20px 20px black;
+}
+
+.score-to-win {
+    grid-column: 1 / span 2;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.buttons {
+    grid-column: 1 / span 2;
+    margin: -40px 0;
+}
+
+
+.row {
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20%;
+}
+
+.left {
+    border-right: solid 4px gray;
+}
+
+.left, .right {
+    font-size: 90px;
+}
+
+.details * {
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    width: 70vw;
+    border-bottom: 2px solid white;
+}
+
+.main-grid * {
+    font-size: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bot-row, .mid-row {
+    border-top: 2px solid white;
+}
+
+.right-border {
+    border-right: 2px solid white;
+}
+
+.score {
+    height: 200px;
+    font-size: 150px;
+    background-color: rgba(189, 189, 189, 0.39);
+}
