@@ -7,25 +7,25 @@ const GameList = (props) => {
     const [ games, setGames ] = useState([]);
 
     const getGames = () => {
-        fetch("http://localhost:5000/api/games/", { method: "GET" })
+        fetch("https://dslusser.com:5000/api/games", { method: "GET" })
             .then((response) => response.json())
             .then((data) => {setGames(data)});
     };
 
     useEffect(() => {
         getGames();
-    },[])
+    },[games.length])
 
     const onGameClick = (id) => {
         props.setSelectedGameId(id);
     }
 
-    const onCloseClick = (id) => {
+    const onCloseClick = async (id) => {
         const requestOptions = {
             method: "DELETE",
         };
 
-        fetch("http://localhost:5000/api/games/" + id, requestOptions).then(
+        await fetch("https://dslusser.com:5000/api/games/" + id, requestOptions).then(
             (response) => response.text()
         );
         getGames();
@@ -58,7 +58,7 @@ const newGame = () => {
         body: JSON.stringify(body),
     };
 
-    fetch("http://localhost:5000/api/games/", requestOptions).then(
+    fetch("https://dslusser.com:5000/api/games", requestOptions).then(
         (response) => response.json()).then((data) => props.setSelectedGameId(data.insertId));
 }
 

@@ -35,7 +35,7 @@ const EditBoard = (props) => {
         props.setEditMode(false);
     }
 
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
         
         const { game_id } = props.gameState;
@@ -47,6 +47,9 @@ const EditBoard = (props) => {
             scoreB,
             score_to_win
         }
+
+
+        console.log(body);
         
         const requestOptions = {
             method: "PUT",
@@ -56,10 +59,11 @@ const EditBoard = (props) => {
             body: JSON.stringify(body),
         };
 
-        fetch("http://localhost:5000/api/games/" + game_id, requestOptions).then(
+        await fetch("https://dslusser.com:5000/api/games/" + game_id, requestOptions).then(
             (response) => response.json()
         );
         props.setEditMode(false);
+        props.setGameState(body);
     };
 
     return (

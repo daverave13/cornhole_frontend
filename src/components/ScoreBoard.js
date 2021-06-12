@@ -11,15 +11,22 @@ const Scoreboard = (props) => {
     const [ editMode, setEditMode ] = useState(false);
     const [ maxGameId, setMaxGameId ] = useState(-1); 
 
-    const getGameState = () => {
-        fetch("http://localhost:5000/api/games/", { method: "GET" })
-            .then((response) => response.json())
-            .then((data) => {
-                const currentGame = [...data].filter((game) => game.game_id === props.selectedGameId)[0];
-                const mostRecentGame = [...data].sort((a,b) => b.game_id - a.game_id)[0];
-                setMaxGameId(mostRecentGame.game_id + 1);
-                setGameState(currentGame);
-            });
+    const getGameState = async () => {
+        // fetch("https://dslusser.com:5000/api/games/", { method: "GET" })
+        //     .then((response) => response.json())
+        //     .then((data) => {
+        //         const currentGame = [...data].filter((game) => game.game_id === props.selectedGameId)[0];
+        //         const mostRecentGame = [...data].sort((a,b) => b.game_id - a.game_id)[0];
+        //         setMaxGameId(mostRecentGame.game_id + 1);
+        //         setGameState(currentGame);
+        //     });
+
+        const response = await fetch("https://dslusser.com:5000/api/games/", { method: "GET" }).then((response) => response.json());
+        // console.log(response);
+        const currentGame = [...response].filter((game) => game.game_id === props.selectedGameId)[0];
+        const mostRecentGame = [...response].sort((a,b) => b.game_id - a.game_id)[0];
+        setMaxGameId(mostRecentGame.game_id + 1);
+        setGameState(currentGame);
     };
 
     useEffect(() => {
@@ -28,20 +35,14 @@ const Scoreboard = (props) => {
     
     const { game_id, teamA, teamB, scoreA, scoreB, score_to_win } = gameState;
 
-    const updateGameState = (newTeamA = teamA, newTeamB = teamB, newScoreA = scoreA + roundScoreA, newScoreB = scoreB + roundScoreB, newScoreToWin = score_to_win) => {
+    const updateGameState = async () => {
         const newBody = {
-            'teamA': gameState.teamA,
-            'teamB':  newTeamB,
+            'teamA': teamA,
+            'teamB':  teamB,
             'scoreA': scoreA + roundScoreA,
             'scoreB': scoreB + roundScoreB,
-            'score_to_win': newScoreToWin,
+            'score_to_win': score_to_win,
         };
-
-       
-
-        setRoundScoreA(0);
-        setRoundScoreB(0);
-        setGameState(newBody);
 
         const requestOptions = {
             method: "PUT",
@@ -51,10 +52,14 @@ const Scoreboard = (props) => {
             body: JSON.stringify(newBody),
         };
 
-        fetch("http://localhost:5000/api/games/" + game_id, requestOptions).then(
+        await fetch("https://dslusser.com:5000/api/games/" + game_id, requestOptions).then(
             (response) => response.json());
-
+        
+        setRoundScoreA(0);
+        setRoundScoreB(0);
+        setGameState(newBody);
         getGameState();
+    
     }
 
     const newGame = () => {
@@ -78,7 +83,7 @@ const Scoreboard = (props) => {
             body: JSON.stringify(body),
         };
 
-        fetch("http://localhost:5000/api/games/", requestOptions).then(
+        fetch("https://dslusser.com:5000/api/games/", requestOptions).then(
             (response) => response.json());
 
         getGameState();
@@ -134,7 +139,7 @@ const Scoreboard = (props) => {
                 <button onClick={newGame}>New Game</button>
                 <button onClick={onReturnToListClick}>Return to List</button>
             </div>
-            {editMode ? <EditBoard gameState={gameState} setEditMode={setEditMode} /> : ""}
+            {editMode ? <EditBoard gameState={gameState} setEditMode={setEditMode} setGameState={setGameState}/> : ""}
         </div>
     )
 }
