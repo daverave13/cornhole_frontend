@@ -59,34 +59,6 @@ const Scoreboard = (props) => {
         getGameState();
     };
 
-    const newGame = () => {
-        const body = {
-            teamA: "teamA",
-            teamB: "teamB",
-            scoreA: 0,
-            scoreB: 0,
-            score_to_win: 21,
-        };
-
-        setRoundScoreA(0);
-        setRoundScoreB(0);
-        props.setSelectedGameId(maxGameId);
-
-        const requestOptions = {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(body),
-        };
-
-        fetch("https://dslusser.com:5000/api/games/", requestOptions).then(
-            (response) => response.json()
-        );
-
-        getGameState();
-    };
-
     const increaseScore = (team) => {
         if (team === "teamA") {
             if (roundScoreB > 0) {
@@ -144,7 +116,6 @@ const Scoreboard = (props) => {
             <div className='buttons'>
                 <button onClick={updateGameState}>End Round</button>
                 <button onClick={() => setEditMode(true)}>Edit Game</button>
-                <button onClick={newGame}>New Game</button>
                 <button onClick={onReturnToListClick}>Return to List</button>
             </div>
             {editMode ? (

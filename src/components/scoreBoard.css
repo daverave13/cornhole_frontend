@@ -36,7 +36,8 @@ body {
     border-right: solid 4px gray;
 }
 
-.left, .right {
+.left,
+.right {
     font-size: 90px;
 }
 
@@ -60,7 +61,8 @@ body {
     justify-content: center;
 }
 
-.bot-row, .mid-row {
+.bot-row,
+.mid-row {
     border-top: 2px solid white;
 }
 
