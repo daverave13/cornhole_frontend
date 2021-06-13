@@ -53,11 +53,6 @@ button {
     color: white;
 }
 
-button:hover {
-    transform: scale(1.05);
-    transition: all .25s ease-out;
-}
-
 #cancel-button {
     background-color: tomato;
 }

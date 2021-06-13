@@ -6,13 +6,11 @@ body {
 
 .score-board {
     width: 90vw;
-    height: 80vh;
+    height: fit-content;
     margin: 20px auto;
     background: radial-gradient(circle, rgb(97, 101, 110) 70%, rgb(104, 104, 104));
     border-radius: 20px;
     color: white;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
     box-shadow: 0 0 20px 20px black;
 }
 
@@ -23,23 +21,11 @@ body {
     justify-content: center;
 }
 
-.buttons {}
-
-
 .row {
     margin-top: 40px;
     display: flex;
     justify-content: flex-end;
     margin-right: 20%;
-}
-
-.left {
-    border-right: solid 4px gray;
-}
-
-.left,
-.right {
-    font-size: 90px;
 }
 
 .details * {
@@ -68,11 +54,45 @@ body {
     border-top: 2px solid white;
 }
 
+.bot-row {
+    border-bottom: 2px solid white;
+}
+
+.grid-text {
+    font-size: 7rem;
+}
+
 .right-border {
     border-right: 2px solid white;
 }
 
 .score {
-    font-size: 150px;
+    font-size: 20rem;
     background-color: rgba(189, 189, 189, 0.39);
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-rows: 100px; */
+}
+
+.buttons button {
+    width: 100%;
+    margin: 0;
+    padding: 14% 0;
+    border-radius: 0;
+    font-size: 3rem;
+    border: none;
+    background: radial-gradient(circle, rgb(97, 101, 110) 70%, rgb(104, 104, 104));
+}
+
+.buttons button:nth-child(1) {
+    border-bottom-left-radius: 20px;
+    border-right: 2px solid white;
+}
+
+.buttons button:nth-child(3) {
+    border-bottom-right-radius: 20px;
+    border-left: 2px solid white;
 }

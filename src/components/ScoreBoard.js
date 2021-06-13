@@ -84,9 +84,9 @@ const Scoreboard = (props) => {
         <div className='score-board'>
             <div className='main-grid'>
                 <div className='top-row right-border'></div>
-                <div className='top-row right-border'>{teamA}</div>
-                <div className='top-row'>{teamB}</div>
-                <div className='mid-row right-border'>Round</div>
+                <div className='top-row right-border grid-text'>{teamA}</div>
+                <div className='top-row grid-text'>{teamB}</div>
+                <div className='mid-row right-border  grid-text'>Round</div>
                 <div
                     className='mid-row right-border score'
                     onClick={() => increaseScore("teamA")}
@@ -99,15 +99,9 @@ const Scoreboard = (props) => {
                 >
                     {roundScoreB}
                 </div>
-                <div className='bot-row right-border'>Game</div>
+                <div className='bot-row right-border  grid-text'>Game</div>
                 <div className='bot-row right-border score'>{scoreA}</div>
                 <div className='bot-row score'>{scoreB}</div>
-            </div>
-            <div className='score-to-win'>
-                <div>Score To Win:&nbsp;&nbsp;&nbsp;</div>
-                <div className=''>
-                    <div>{score_to_win}</div>
-                </div>
             </div>
             <div className='buttons'>
                 <button onClick={updateGameState}>End Round</button>
