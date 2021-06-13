@@ -59,6 +59,8 @@ const GameList = (props) => {
             scoreA: 0,
             scoreB: 0,
             score_to_win: 21,
+            display_scoreA: 0,
+            display_scoreB: 0,
         };
 
         const requestOptions = {

@@ -48,9 +48,9 @@ const EditBoard = (props) => {
             scoreA,
             scoreB,
             score_to_win,
+            display_scoreA: props.gameState.display_scoreA,
+            display_scoreB: props.gameState.display_scoreB,
         };
-
-        console.log(body);
 
         const requestOptions = {
             method: "PUT",

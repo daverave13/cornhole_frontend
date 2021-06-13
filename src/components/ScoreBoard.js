@@ -2,7 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./scoreBoard.css";
 import EditBoard from "./EditBoard";
-import threeDotMenu from "../img/kebabMenu.png";
 
 const Scoreboard = (props) => {
     const [gameState, setGameState] = useState({});
@@ -34,6 +33,8 @@ const Scoreboard = (props) => {
             scoreA: scoreA + roundScoreA,
             scoreB: scoreB + roundScoreB,
             score_to_win: score_to_win,
+            display_scoreA: 0,
+            display_scoreB: 0,
         };
 
         const requestOptions = {
@@ -55,24 +56,56 @@ const Scoreboard = (props) => {
         getGameState();
     };
 
+    const updateDislay = async (
+        updateScoreA = roundScoreA,
+        updateScoreB = roundScoreB
+    ) => {
+        const newBody = {
+            teamA: teamA,
+            teamB: teamB,
+            scoreA: scoreA,
+            scoreB: scoreB,
+            score_to_win: score_to_win,
+            display_scoreA: updateScoreA,
+            display_scoreB: updateScoreB,
+        };
+
+        const requestOptions = {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newBody),
+        };
+
+        await fetch(
+            "https://dslusser.com:5000/api/games/" + game_id,
+            requestOptions
+        ).then((response) => response.json().then(getGameState()));
+    };
+
     const increaseScore = (team) => {
+        let newRoundScoreA;
+        let newRoundScoreB;
+
         if (team === "teamA") {
             if (roundScoreB > 0) {
-                const newRoundScoreB = roundScoreB - 1;
+                newRoundScoreB = roundScoreB - 1;
                 setRoundScoreB(newRoundScoreB);
             } else {
-                const newRoundScoreA = roundScoreA + 1;
+                newRoundScoreA = roundScoreA + 1;
                 setRoundScoreA(newRoundScoreA);
             }
         } else {
             if (roundScoreA > 0) {
-                const newRoundScoreA = roundScoreA - 1;
+                newRoundScoreA = roundScoreA - 1;
                 setRoundScoreA(newRoundScoreA);
             } else {
-                const newRoundScoreB = roundScoreB + 1;
+                newRoundScoreB = roundScoreB + 1;
                 setRoundScoreB(newRoundScoreB);
             }
         }
+        updateDislay(newRoundScoreA, newRoundScoreB);
     };
 
     const onReturnToListClick = () => {
