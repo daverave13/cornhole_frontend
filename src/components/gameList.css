@@ -39,8 +39,8 @@ ul li:nth-child(even) {
 }
 
 li img {
-    height: 3rem;
-    margin: 2rem 1rem;
+    height: 5rem;
+    margin: 1.25rem;
     cursor: pointer;
 }
 
