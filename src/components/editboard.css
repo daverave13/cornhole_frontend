@@ -1,63 +1,83 @@
-.EditBoard {
-    font-size: 20px;
-    position: absolute;
-    top: 30vh;
-    width: 40vw;
-    background-color: rgb(255, 255, 255);
-    border-radius: 20px;
-    left: 30vw;
-    display: flex;
-    justify-content: space-evenly;
+@media only screen and (min-width: 1000px) {
+    .EditBoard {
+        font-size: 20px;
+        position: absolute;
+        top: 30vh;
+        width: 40vw;
+        background-color: rgb(255, 255, 255);
+        border-radius: 20px;
+        left: 30vw;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .EditBoard * {
+        border-radius: 20px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        padding: 100px;
+    }
+
+    .input {
+        display: flex;
+        flex-direction: row;
+        height: 1.5rem;
+        margin-bottom: 15px;
+        justify-content: space-between;
+    }
+
+    .input label {
+        width: fit-content;
+        color: black;
+    }
+
+    .input input[type=text] {
+        width: 60%;
+        border-radius: 5px;
+        border: solid 1px rgb(49, 171, 241);
+    }
+
+    .input input[type=number] {
+        width: 10%;
+        border-radius: 5px;
+        border: solid 1px rgb(49, 171, 241);
+        margin-right: 50%;
+    }
+
+    button {
+        width: fit-content;
+        padding: 20px 50px;
+        margin: 0 15px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: solid 2px black;
+        background-color: rgb(4, 141, 34);
+        color: white;
+        font-size: 2rem;
+    }
+
+    #cancel-button {
+        background-color: red;
+    }
 }
 
-.EditBoard * {
-    border-radius: 20px;
-}
+@media only screen and (max-width: 1000px) {
+    .EditBoard {
+        font-size: 2rem;
+    }
 
-form {
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    padding: 100px;
-}
+    button {
+        margin: 25px 10px;
+        padding: 30px;
+        font-size: 1.5rem;
+    }
 
-.input {
-    display: flex;
-    flex-direction: row;
-    height: 1.5rem;
-    margin-bottom: 15px;
-    justify-content: space-between;
-}
-
-.input label {
-    width: fit-content;
-    color: black;
-}
-
-.input input[type=text] {
-    width: 60%;
-    border-radius: 5px;
-    border: solid 1px rgb(49, 171, 241);
-}
-
-.input input[type=number] {
-    width: 10%;
-    border-radius: 5px;
-    border: solid 1px rgb(49, 171, 241);
-    margin-right: 50%;
-}
-
-button {
-    width: 80px;
-    padding: 50px 100px;
-    margin: 0 15px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: solid 2px black;
-    background-color: rgb(4, 141, 34);
-    color: white;
-}
-
-#cancel-button {
-    background-color: red;
+    .input {
+        display: flex;
+        justify-content: space-around;
+    }
 }

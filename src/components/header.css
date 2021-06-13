@@ -1,9 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
 
 .Header div {
-    font-family: 'Italianno', cursive;
-    color: rgb(255, 255, 255);
-    font-size: 12rem;
-    margin-bottom: -80px;
     background-color: rgba(0, 0, 0, 0.781);
+    color: white;
+}
+
+@media only screen and (min-width: 1000px) {
+    .Header div {
+        font-family: 'Italianno', cursive;
+        font-size: 12rem;
+        margin-bottom: -80px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .Header div {
+        font-size: 1.5rem;
+        padding: 15px;
+    }
 }

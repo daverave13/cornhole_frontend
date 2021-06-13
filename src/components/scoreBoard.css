@@ -1,98 +1,128 @@
-body {
-    background: url("https://www.all3dfree.net/uploads/5/1/9/6/51967249/green_lush_grass_textures_free_23.jpg");
-    background-repeat: repeat;
-    background-size: contain;
+@media only screen and (min-width: 1000px) {
+    body {
+        background: url("https://www.all3dfree.net/uploads/5/1/9/6/51967249/green_lush_grass_textures_free_23.jpg");
+        background-repeat: repeat;
+        background-size: contain;
+    }
+
+    .score-board {
+        width: 90vw;
+        height: fit-content;
+        margin: 20px auto;
+        background: radial-gradient(circle, rgb(97, 101, 110) 70%, rgb(104, 104, 104));
+        border-radius: 20px;
+        color: white;
+        box-shadow: 0 0 20px 20px black;
+    }
+
+    .score-to-win {
+        grid-column: 1 / span 2;
+        font-size: 50px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .row {
+        margin-top: 40px;
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 20%;
+    }
+
+    .details * {
+        justify-content: center;
+        vertical-align: middle;
+    }
+
+    .main-grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr 2fr;
+        width: 90vw;
+        border-bottom: 2px solid white;
+    }
+
+    .main-grid * {
+        font-size: 40px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .bot-row,
+    .mid-row {
+        border-top: 2px solid white;
+    }
+
+    .bot-row {
+        border-bottom: 2px solid white;
+    }
+
+    .grid-text {
+        font-size: 7rem;
+    }
+
+    .right-border {
+        border-right: 2px solid white;
+    }
+
+    .score {
+        font-size: 22rem;
+        background-color: rgba(189, 189, 189, 0.39);
+    }
+
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* grid-template-rows: 100px; */
+    }
+
+    .buttons button {
+        width: 100%;
+        margin: 0;
+        padding: 14% 0;
+        border-radius: 0;
+        font-size: 3rem;
+        border: none;
+        background: radial-gradient(circle, rgb(97, 101, 110) 70%, rgb(104, 104, 104));
+    }
+
+    .buttons button:nth-child(1) {
+        border-bottom-left-radius: 20px;
+        border-right: 2px solid white;
+    }
+
+    .buttons button:nth-child(3) {
+        border-bottom-right-radius: 20px;
+        border-left: 2px solid white;
+    }
 }
 
-.score-board {
-    width: 90vw;
-    height: fit-content;
-    margin: 20px auto;
-    background: radial-gradient(circle, rgb(97, 101, 110) 70%, rgb(104, 104, 104));
-    border-radius: 20px;
-    color: white;
-    box-shadow: 0 0 20px 20px black;
-}
+@media only screen and (max-width: 1000px) {
+    .buttons button {
+        margin: 25px 10px;
+        padding: 30px;
+        font-size: 1.5rem;
+    }
 
-.score-to-win {
-    grid-column: 1 / span 2;
-    font-size: 50px;
-    display: flex;
-    justify-content: center;
-}
+    .main-grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr 2fr;
+        width: 100vw;
+        border-bottom: 2px solid white;
+    }
 
-.row {
-    margin-top: 40px;
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 20%;
-}
+    .main-grid * {
+        width: 100%;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: solid black 1px;
+    }
 
-.details * {
-    justify-content: center;
-    vertical-align: middle;
-}
-
-.main-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr 2fr;
-    width: 90vw;
-    border-bottom: 2px solid white;
-
-}
-
-.main-grid * {
-    font-size: 40px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.bot-row,
-.mid-row {
-    border-top: 2px solid white;
-}
-
-.bot-row {
-    border-bottom: 2px solid white;
-}
-
-.grid-text {
-    font-size: 7rem;
-}
-
-.right-border {
-    border-right: 2px solid white;
-}
-
-.score {
-    font-size: 22rem;
-    background-color: rgba(189, 189, 189, 0.39);
-}
-
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* grid-template-rows: 100px; */
-}
-
-.buttons button {
-    width: 100%;
-    margin: 0;
-    padding: 14% 0;
-    border-radius: 0;
-    font-size: 3rem;
-    border: none;
-    background: radial-gradient(circle, rgb(97, 101, 110) 70%, rgb(104, 104, 104));
-}
-
-.buttons button:nth-child(1) {
-    border-bottom-left-radius: 20px;
-    border-right: 2px solid white;
-}
-
-.buttons button:nth-child(3) {
-    border-bottom-right-radius: 20px;
-    border-left: 2px solid white;
+    .score {
+        font-size: 5rem;
+        background-color: rgba(189, 189, 189, 0.39);
+    }
 }

@@ -1,50 +1,75 @@
-.GameList {
-    background-color: rgb(209, 209, 209);
-    width: 60vw;
-    margin: 0 auto;
-    border-radius: 10px;
+@media only screen and (min-width: 1000px) {
+    .GameList {
+        background-color: rgb(209, 209, 209);
+        width: 60vw;
+        margin: 0 auto;
+        border-radius: 10px;
+    }
+
+    .GameList * {
+        font-size: 3rem;
+    }
+
+    .GameList button {
+        width: fit-content;
+    }
+
+    li {
+        display: flex;
+        flex-direction: row;
+        margin-top: 5px;
+
+    }
+
+    li div {
+        margin: 10px 0;
+    }
+
+    li div {
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .bold {
+        font-weight: bold;
+    }
+
+    ul li:nth-child(even) {
+        background-color: rgb(134, 133, 133);
+    }
+
+    li img {
+        height: 5rem;
+        margin: 1.25rem;
+        cursor: pointer;
+    }
+
+    .edit-buttons * {
+        margin: 10px 40px;
+        border-radius: 5px;
+    }
 }
 
-.GameList * {
-    font-size: 3rem;
-}
+@media only screen and (max-width: 1000px) {
+    li div {
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        font-size: 1.4rem;
+    }
 
-.GameList button {
-    width: fit-content;
-}
+    li {
+        margin-top: 20px;
+        border-bottom: solid 3px black;
+    }
 
-li {
-    display: flex;
-    flex-direction: row;
-    margin-top: 5px;
+    li img {
+        height: 1rem;
+    }
 
-}
-
-li div {
-    margin: 10px 0;
-}
-
-li div {
-    cursor: pointer;
-    display: flex;
-    flex-direction: row;
-}
-
-.bold {
-    font-weight: bold;
-}
-
-ul li:nth-child(even) {
-    background-color: rgb(134, 133, 133);
-}
-
-li img {
-    height: 5rem;
-    margin: 1.25rem;
-    cursor: pointer;
-}
-
-.edit-buttons * {
-    margin: 10px 40px;
-    border-radius: 5px;
+    .GameList button {
+        margin-top: 20px;
+        padding: 5px 10px;
+    }
 }
