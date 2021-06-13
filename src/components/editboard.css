@@ -1,12 +1,17 @@
 .EditBoard {
     font-size: 20px;
     position: absolute;
+    top: 30vh;
     width: 40vw;
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
     left: 30vw;
     display: flex;
     justify-content: space-evenly;
+}
+
+.EditBoard * {
+    border-radius: 20px;
 }
 
 form {
@@ -49,10 +54,10 @@ button {
     margin-bottom: 10px;
     border-radius: 5px;
     border: solid 2px black;
-    background-color: rgb(71, 71, 245);
+    background-color: rgb(4, 141, 34);
     color: white;
 }
 
 #cancel-button {
-    background-color: tomato;
+    background-color: red;
 }

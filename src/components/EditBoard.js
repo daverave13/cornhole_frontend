@@ -121,7 +121,7 @@ const EditBoard = (props) => {
                         onChange={(e) => onScoreToWinUpdate(e)}
                     />
                 </div>
-                <div className='buttons'>
+                <div className='edit-buttons'>
                     <button type='submit'>Submit</button>
                     <button id='cancel-button' onClick={cancelEdit}>
                         Cancel

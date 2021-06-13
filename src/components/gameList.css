@@ -44,6 +44,7 @@ li img {
     cursor: pointer;
 }
 
-button {
+.edit-buttons * {
     margin: 10px 40px;
+    border-radius: 5px;
 }
