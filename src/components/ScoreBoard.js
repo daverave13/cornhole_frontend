@@ -2,13 +2,13 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./scoreBoard.css";
 import EditBoard from "./EditBoard";
+import threeDotMenu from "../img/kebabMenu.png";
 
 const Scoreboard = (props) => {
     const [gameState, setGameState] = useState({});
     const [roundScoreA, setRoundScoreA] = useState(0);
     const [roundScoreB, setRoundScoreB] = useState(0);
     const [editMode, setEditMode] = useState(false);
-    const [maxGameId, setMaxGameId] = useState(-1);
 
     const getGameState = async () => {
         const response = await fetch("https://dslusser.com:5000/api/games/", {
@@ -18,10 +18,6 @@ const Scoreboard = (props) => {
         const currentGame = [...response].filter(
             (game) => game.game_id === props.selectedGameId
         )[0];
-        const mostRecentGame = [...response].sort(
-            (a, b) => b.game_id - a.game_id
-        )[0];
-        setMaxGameId(mostRecentGame.game_id + 1);
         setGameState(currentGame);
     };
 

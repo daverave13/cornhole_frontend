@@ -3,3 +3,13 @@
   user-select: none;
 }
 
+.game-id-readout {
+  padding: 5px 10px;
+  border: solid 1px gray;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  width: fit-content;
+  position: sticky;
+  bottom: 0;
+}

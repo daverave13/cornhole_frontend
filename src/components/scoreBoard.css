@@ -5,7 +5,8 @@ body {
 }
 
 .score-board {
-    width: 70vw;
+    width: 90vw;
+    height: 80vh;
     margin: 20px auto;
     background: radial-gradient(circle, rgb(97, 101, 110) 70%, rgb(104, 104, 104));
     border-radius: 20px;
@@ -22,9 +23,7 @@ body {
     justify-content: center;
 }
 
-.buttons {
-    grid-column: 1 / span 2;
-}
+.buttons {}
 
 
 .row {
@@ -51,8 +50,9 @@ body {
 .main-grid {
     display: grid;
     grid-template-columns: 1fr 2fr 2fr;
-    width: 70vw;
+    width: 90vw;
     border-bottom: 2px solid white;
+
 }
 
 .main-grid * {
@@ -73,7 +73,6 @@ body {
 }
 
 .score {
-    height: 200px;
     font-size: 150px;
     background-color: rgba(189, 189, 189, 0.39);
 }
